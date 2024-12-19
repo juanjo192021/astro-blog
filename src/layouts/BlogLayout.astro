@@ -1,15 +1,14 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import '../styles/blog.css';
+import "../styles/blog.css";
 
 /* interface Props {
   title: string;
 } */
 
-const { title } = Astro.props;/* , ...rest */
+const { title } = Astro.props; /* , ...rest */
 
 /* const frontmatter = rest.frontmatter; */
-
 ---
 
 <!doctype html>
@@ -20,7 +19,12 @@ const { title } = Astro.props;/* , ...rest */
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Juan Jose's Blog"
+      href={new URL("rss.xml", Astro.site)}
+    />
     <ClientRouter />
   </head>
   <body class="bg-gray-900">
@@ -30,4 +34,3 @@ const { title } = Astro.props;/* , ...rest */
     </main>
   </body>
 </html>
-
